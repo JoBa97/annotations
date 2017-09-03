@@ -5,21 +5,19 @@
  */
 package com.spleefleague.annotations;
 
-import static com.spleefleague.annotations.CommandSource.CONSOLE;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import static com.spleefleague.annotations.CommandSource.PLAYER;
+import org.bukkit.entity.Player;
 
 /**
  *
  * @author jonas
  */
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.METHOD})
-public @interface Endpoint {
-
-    int priority() default 0;
-    CommandSource[] target() default {PLAYER, CONSOLE};
+@Target({ElementType.PARAMETER})
+@Argument(target = Player.class)
+public @interface PlayerArg {
+    boolean exact() default false;
 }

@@ -7,12 +7,11 @@ package com.spleefleague.annotations;
 
 /**
  *
- * @author balsfull
+ * @author jonas
  */
-public enum CommandSource {
-    PLAYER,
-    COMMAND_BLOCK,
-    CONSOLE;
-    
-    public static CommandSource[] ALL = {PLAYER, CONSOLE};
+public enum DispatchResultType {
+    SUCCESS,
+    NO_ROUTE,
+    NO_VALID_ROUTE,
+    OTHER
 }

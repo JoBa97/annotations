@@ -5,13 +5,12 @@
  */
 package com.spleefleague.annotations;
 
-import com.spleefleague.annotations.Command;
-import com.spleefleague.annotations.CommandSource;
+import org.bukkit.command.CommandSender;
 
 /**
  *
  * @author balsfull
  */
 public interface Dispatcher {
-    public boolean dispatch(Command instance, CommandSource source, String[] args);
+    public DispatchResult dispatch(DispatchableCommand instance, CommandSender sender, CommandSource source, String[] args);
 }
